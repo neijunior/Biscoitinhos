@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj": {}
+    "C:\\NeiJr\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj": {
+    "C:\\NeiJr\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj",
+        "projectUniqueName": "C:\\NeiJr\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj",
         "projectName": "Biscoitinhos.api.Client",
-        "projectPath": "C:\\Projetos\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj",
-        "packagesPath": "C:\\Users\\Nei Junior\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\obj\\",
+        "projectPath": "C:\\NeiJr\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\Biscoitinhos.api.Client.csproj",
+        "packagesPath": "C:\\Users\\neifa\\.nuget\\packages\\",
+        "outputPath": "C:\\NeiJr\\Biscoitinhos\\src\\Biscoitinhos.api\\Biscoitinhos.api.Client\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Nei Junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\neifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -57,13 +52,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.5, )",
+              "version": "[8.0.6, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.5, )",
+              "version": "[8.0.6, )",
               "autoReferenced": true
             }
           },
@@ -81,7 +76,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.5, 8.0.5]"
+              "version": "[8.0.6, 8.0.6]"
             }
           ],
           "frameworkReferences": {
@@ -89,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

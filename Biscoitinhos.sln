@@ -11,13 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.domain", "Bisc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.infra", "Biscoitinhos.infra", "{1B3F612F-1E68-4C3F-BF83-823E4FDAB505}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.api", "src\Biscoitinhos.api\Biscoitinhos.api\Biscoitinhos.api.csproj", "{01364170-101E-45BE-A71E-04C0220346D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.api", "src\Biscoitinhos.api\Biscoitinhos.api\Biscoitinhos.api.csproj", "{01364170-101E-45BE-A71E-04C0220346D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.api.Client", "src\Biscoitinhos.api\Biscoitinhos.api.Client\Biscoitinhos.api.Client.csproj", "{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.api.Client", "src\Biscoitinhos.api\Biscoitinhos.api.Client\Biscoitinhos.api.Client.csproj", "{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.domain", "src\Biscoitinhos.domain\Biscoitinhos.domain.csproj", "{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.domain", "src\Biscoitinhos.domain\Biscoitinhos.domain.csproj", "{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.infra", "src\Biscoitinhos.infra\Biscoitinhos.infra.csproj", "{890B092A-9491-4EF7-ACD1-CC459E9A72B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.infra.Data", "src\Biscoitinhos.infra\Biscoitinhos.infra.Data\Biscoitinhos.infra.Data.csproj", "{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.infra.IoC", "src\Biscoitinhos.infra\Biscoitinhos.infra.IoC\Biscoitinhos.infra.IoC.csproj", "{12F230D1-2B68-4254-8033-CCFDFC0A2044}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +39,14 @@ Global
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{890B092A-9491-4EF7-ACD1-CC459E9A72B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{890B092A-9491-4EF7-ACD1-CC459E9A72B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{890B092A-9491-4EF7-ACD1-CC459E9A72B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{890B092A-9491-4EF7-ACD1-CC459E9A72B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +58,8 @@ Global
 		{01364170-101E-45BE-A71E-04C0220346D2} = {D20DDBC8-6294-405E-B6B1-6D84A4607EEE}
 		{A43FF67F-B5FF-4102-BFF2-10C9EBA24133} = {D20DDBC8-6294-405E-B6B1-6D84A4607EEE}
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C} = {EF33DA7F-46CE-49A6-A8C1-6901FFF9135A}
-		{890B092A-9491-4EF7-ACD1-CC459E9A72B6} = {1B3F612F-1E68-4C3F-BF83-823E4FDAB505}
+		{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1} = {1B3F612F-1E68-4C3F-BF83-823E4FDAB505}
+		{12F230D1-2B68-4254-8033-CCFDFC0A2044} = {1B3F612F-1E68-4C3F-BF83-823E4FDAB505}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E9232379-7870-4A22-969B-7A57853CA2D6}
