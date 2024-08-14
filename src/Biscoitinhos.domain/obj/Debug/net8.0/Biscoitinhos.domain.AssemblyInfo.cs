@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Biscoitinhos.domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a07bff2f865c58bfab7a62ce31bad71941d12f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f60f43dac9eb4325bbfd372d7ddcdb026e919f0a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Biscoitinhos.domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Biscoitinhos.domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
