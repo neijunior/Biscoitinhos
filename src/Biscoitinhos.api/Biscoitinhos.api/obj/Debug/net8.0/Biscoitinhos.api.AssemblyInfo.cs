@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Biscoitinhos.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a07bff2f865c58bfab7a62ce31bad71941d12f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+019f804fcc50f3a1d01c602b53bdffb0fe25966e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Biscoitinhos.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Biscoitinhos.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
