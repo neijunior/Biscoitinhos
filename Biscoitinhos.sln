@@ -5,21 +5,27 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A9BE95A-7211-4225-BDBE-7713773B8584}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.api", "Biscoitinhos.api", "{D20DDBC8-6294-405E-B6B1-6D84A4607EEE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.domain", "Biscoitinhos.domain", "{EF33DA7F-46CE-49A6-A8C1-6901FFF9135A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.infra", "Biscoitinhos.infra", "{1B3F612F-1E68-4C3F-BF83-823E4FDAB505}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.api", "src\Biscoitinhos.api\Biscoitinhos.api\Biscoitinhos.api.csproj", "{01364170-101E-45BE-A71E-04C0220346D2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.api.Client", "src\Biscoitinhos.api\Biscoitinhos.api.Client\Biscoitinhos.api.Client.csproj", "{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.domain", "src\Biscoitinhos.domain\Biscoitinhos.domain.csproj", "{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.infra.Data", "src\Biscoitinhos.infra\Biscoitinhos.infra.Data\Biscoitinhos.infra.Data.csproj", "{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.infra.Data", "src\Biscoitinhos.infra\Biscoitinhos.infra.Data\Biscoitinhos.infra.Data.csproj", "{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.infra.IoC", "src\Biscoitinhos.infra\Biscoitinhos.infra.IoC\Biscoitinhos.infra.IoC.csproj", "{12F230D1-2B68-4254-8033-CCFDFC0A2044}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biscoitinhos.infra.IoC", "src\Biscoitinhos.infra\Biscoitinhos.infra.IoC\Biscoitinhos.infra.IoC.csproj", "{12F230D1-2B68-4254-8033-CCFDFC0A2044}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.application", "Biscoitinhos.application", "{866B4B2C-9212-4FC6-8A9B-A3D5DDFAB7BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.presentation", "Biscoitinhos.presentation", "{5F014300-C907-4551-9FB2-85A711AC8036}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Biscoitinhos.services", "Biscoitinhos.services", "{1EF0C086-E28B-442A-B068-A086A863E9AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.application", "src\Biscoitinhos.application\Biscoitinhos.application.csproj", "{C2ADE66E-7FCE-44CD-B7A6-A81D9E513D4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.presentation", "src\Biscoitinhos.presentation\Biscoitinhos.presentation\Biscoitinhos.presentation.csproj", "{6032EC6E-C787-4192-8CE6-A1AC3C775FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biscoitinhos.presentation.Client", "src\Biscoitinhos.presentation\Biscoitinhos.presentation.Client\Biscoitinhos.presentation.Client.csproj", "{FCC0564A-2491-4585-9BFF-E982243738FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +33,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{01364170-101E-45BE-A71E-04C0220346D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01364170-101E-45BE-A71E-04C0220346D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01364170-101E-45BE-A71E-04C0220346D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01364170-101E-45BE-A71E-04C0220346D2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A43FF67F-B5FF-4102-BFF2-10C9EBA24133}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,19 +45,34 @@ Global
 		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F230D1-2B68-4254-8033-CCFDFC0A2044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2ADE66E-7FCE-44CD-B7A6-A81D9E513D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2ADE66E-7FCE-44CD-B7A6-A81D9E513D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2ADE66E-7FCE-44CD-B7A6-A81D9E513D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2ADE66E-7FCE-44CD-B7A6-A81D9E513D4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6032EC6E-C787-4192-8CE6-A1AC3C775FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6032EC6E-C787-4192-8CE6-A1AC3C775FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6032EC6E-C787-4192-8CE6-A1AC3C775FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6032EC6E-C787-4192-8CE6-A1AC3C775FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC0564A-2491-4585-9BFF-E982243738FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC0564A-2491-4585-9BFF-E982243738FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC0564A-2491-4585-9BFF-E982243738FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC0564A-2491-4585-9BFF-E982243738FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D20DDBC8-6294-405E-B6B1-6D84A4607EEE} = {5A9BE95A-7211-4225-BDBE-7713773B8584}
 		{EF33DA7F-46CE-49A6-A8C1-6901FFF9135A} = {5A9BE95A-7211-4225-BDBE-7713773B8584}
 		{1B3F612F-1E68-4C3F-BF83-823E4FDAB505} = {5A9BE95A-7211-4225-BDBE-7713773B8584}
-		{01364170-101E-45BE-A71E-04C0220346D2} = {D20DDBC8-6294-405E-B6B1-6D84A4607EEE}
-		{A43FF67F-B5FF-4102-BFF2-10C9EBA24133} = {D20DDBC8-6294-405E-B6B1-6D84A4607EEE}
 		{A311E920-A9DA-49BB-9ECF-9EB80104EE9C} = {EF33DA7F-46CE-49A6-A8C1-6901FFF9135A}
 		{3F499F3C-BE30-4B45-AAD0-4D03FC8129F1} = {1B3F612F-1E68-4C3F-BF83-823E4FDAB505}
 		{12F230D1-2B68-4254-8033-CCFDFC0A2044} = {1B3F612F-1E68-4C3F-BF83-823E4FDAB505}
+		{866B4B2C-9212-4FC6-8A9B-A3D5DDFAB7BE} = {5A9BE95A-7211-4225-BDBE-7713773B8584}
+		{5F014300-C907-4551-9FB2-85A711AC8036} = {5A9BE95A-7211-4225-BDBE-7713773B8584}
+		{1EF0C086-E28B-442A-B068-A086A863E9AE} = {5A9BE95A-7211-4225-BDBE-7713773B8584}
+		{C2ADE66E-7FCE-44CD-B7A6-A81D9E513D4B} = {866B4B2C-9212-4FC6-8A9B-A3D5DDFAB7BE}
+		{6032EC6E-C787-4192-8CE6-A1AC3C775FBE} = {5F014300-C907-4551-9FB2-85A711AC8036}
+		{FCC0564A-2491-4585-9BFF-E982243738FB} = {5F014300-C907-4551-9FB2-85A711AC8036}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E9232379-7870-4A22-969B-7A57853CA2D6}
