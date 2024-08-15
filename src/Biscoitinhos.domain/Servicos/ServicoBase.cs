@@ -1,18 +1,18 @@
-﻿using Biscoitinhos.domain.Entities;
-using Biscoitinhos.domain.Interfaces.Repositories;
-using Biscoitinhos.domain.Interfaces.Services;
+﻿using Biscoitinhos.domain.Entidades;
+using Biscoitinhos.domain.Interfaces.Repositorios;
+using Biscoitinhos.domain.Interfaces.Servicos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biscoitinhos.domain.Services
+namespace Biscoitinhos.domain.Servicos
 {
-  public class ServiceBase<TEntity> : IServiceBase<TEntity> where TEntity : EntityBase
+  public class ServicoBase<TEntity> : IServicoBase<TEntity> where TEntity : EntidadeBase
   {
-    protected readonly IRepositoryBase<TEntity> _repository;
-    public ServiceBase(IRepositoryBase<TEntity> repository)
+    protected readonly IRepositorioBase<TEntity> _repository;
+    public ServicoBase(IRepositorioBase<TEntity> repository)
     {
       this._repository = repository;
     }

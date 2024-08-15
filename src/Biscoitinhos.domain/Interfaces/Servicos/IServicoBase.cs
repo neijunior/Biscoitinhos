@@ -1,8 +1,8 @@
-﻿using Biscoitinhos.domain.Entities;
+﻿using Biscoitinhos.domain.Entidades;
 
-namespace Biscoitinhos.domain.Interfaces.Services
+namespace Biscoitinhos.domain.Interfaces.Servicos
 {
-  public interface IServiceBase<TEntity> where TEntity : EntityBase
+  public interface IServicoBase<TEntity> where TEntity : EntidadeBase
   {
     void Insert(TEntity entity);
     void Delete(int Id);
