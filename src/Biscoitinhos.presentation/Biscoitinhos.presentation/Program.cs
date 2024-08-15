@@ -1,5 +1,5 @@
-using Biscoitinhos.api.Client.Pages;
-using Biscoitinhos.api.Components;
+using Biscoitinhos.presentation.Client.Pages;
+using Biscoitinhos.presentation.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +30,6 @@ app.UseAntiforgery();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Biscoitinhos.api.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(Biscoitinhos.presentation.Client._Imports).Assembly);
 
 app.Run();
