@@ -1,13 +1,13 @@
-﻿using Biscoitinhos.domain.Entities;
+﻿using Biscoitinhos.domain.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Biscoitinhos.domain.Interfaces.Repositories
+namespace Biscoitinhos.domain.Interfaces.Repositorios
 {
-  public interface IRepositoryBase<TEntity> where TEntity : EntityBase
+  public interface IRepositorioBase<TEntity> where TEntity : EntidadeBase
   {
     int Insert(TEntity entity);
     void Delete(int Id);

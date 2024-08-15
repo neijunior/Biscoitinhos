@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Biscoitinhos.infra.Data.Contexts
+namespace Biscoitinhos.infra.Data.Contextos
 {
-  public class Context : DbContext
+  public class Contexto : DbContext
   {
     public IDbContextTransaction Transaction { get; private set; }
-    public Context(DbContextOptions<Context> options) : base(options)
+    public Contexto(DbContextOptions<Contexto> options) : base(options)
     {
-      if (Database.GetPendingMigrations().Count() > 0)
-        Database.Migrate();
+      //if (Database Database.GetPendingMigrations().Count() > 0)
+      //  Database.Migrate();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

@@ -1,0 +1,7 @@
+﻿namespace Biscoitinhos.domain.Entidades
+{
+  public class EntidadeBase
+  {
+    public int Id { get; set; }
+  }
+}
