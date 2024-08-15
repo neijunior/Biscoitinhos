@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Biscoitinhos.application\Biscoitinhos.application.csproj" />
+    <ProjectReference Include="..\Biscoitinhos.infra.Data\Biscoitinhos.infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

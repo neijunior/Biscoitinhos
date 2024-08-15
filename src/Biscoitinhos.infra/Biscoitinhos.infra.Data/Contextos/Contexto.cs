@@ -1,15 +1,18 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Biscoitinhos.domain.Entidades;
+using Biscoitinhos.infra.Data.Mapeamentos;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Biscoitinhos.infra.Data.Contextos
 {
   public class Contexto : DbContext
   {
+    public DbSet<SKU> SKUs { get; set; } 
     public IDbContextTransaction Transaction { get; private set; }
     public Contexto(DbContextOptions<Contexto> options) : base(options)
     {
-      //if (Database Database.GetPendingMigrations().Count() > 0)
-      //  Database.Migrate();
+      if (Database.GetPendingMigrations().Count() > 0)
+        Database.Migrate();
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -61,7 +64,8 @@ namespace Biscoitinhos.infra.Data.Contextos
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       base.OnModelCreating(modelBuilder);
-      //modelBuilder.ApplyConfiguration();
+      modelBuilder.ApplyConfiguration(new SKUMap());
+      
     }
   }
 }

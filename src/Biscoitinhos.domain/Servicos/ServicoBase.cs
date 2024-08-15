@@ -11,39 +11,39 @@ namespace Biscoitinhos.domain.Servicos
 {
   public class ServicoBase<TEntity> : IServicoBase<TEntity> where TEntity : EntidadeBase
   {
-    protected readonly IRepositorioBase<TEntity> _repository;
-    public ServicoBase(IRepositorioBase<TEntity> repository)
+    protected readonly IRepositorioBase<TEntity> _repositorio;
+    public ServicoBase(IRepositorioBase<TEntity> repositorio)
     {
-      this._repository = repository;
+      this._repositorio = repositorio;
     }
     public void Delete(int Id)
     {
-      _repository.Delete(Id); 
+      _repositorio.Delete(Id); 
     }
 
     public void Delete(TEntity entity)
     {
-      _repository.Delete(entity);
+      _repositorio.Delete(entity);
     }
 
     public void Insert(TEntity entity)
     {
-      _repository.Insert(entity);
+      _repositorio.Insert(entity);
     }
 
     public IEnumerable<TEntity> SelectAll()
     {
-      return _repository.SelectAll();
+      return _repositorio.SelectAll();
     }
 
     public TEntity SelectById(int Id)
     {
-      return _repository.SelectById(Id);
+      return _repositorio.SelectById(Id);
     }
 
     public void Update(TEntity entity)
     {
-      _repository.Update(entity);
+      _repositorio.Update(entity);
     }
   }
 }

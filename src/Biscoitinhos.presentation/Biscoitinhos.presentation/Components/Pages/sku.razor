@@ -1,0 +1,42 @@
+﻿@page "/Sku"
+@rendermode Interactive
+
+<h3>sku</h3>
+
+<EditForm Model="@Model" OnInvalidSubmit="OnInvalidSubmit" OnValidSubmit="OnValidSubmit">
+    <div class="mb-3">
+        <InputText type="text" @bind-Value="Model.Name">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary></ValidationSummary>
+        </InputText>
+
+        <button type="submit">Salvar</button>
+    </div>
+</EditForm>
+
+<p>
+    @Result
+</p>
+@code {
+    public Teste Model { get; set; } = new();
+    public string Result = "Formulário Vazio";
+
+    public void OnValidSubmit()
+    {
+        Result = "Formulário preenchido";
+    }
+
+    public void OnInvalidSubmit()
+    {
+        Result = "Formulário Inválido";
+    }
+
+    public class Teste
+    {
+        //Data Annotations
+        [Required(ErrorMessage = "Nome obrigatório")]
+        public string Name { get; set; } = string.Empty;
+
+
+    }
+}
