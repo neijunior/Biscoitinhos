@@ -1,42 +1,70 @@
 ﻿@page "/Sku"
-@rendermode Interactive
+
+@using Biscoitinhos.application.DTO;
+@inject IJSRuntime JSRuntime;
+@inject Biscoitinhos.application.Interfaces.ISKUApp skuApp;
+
 
 <h3>sku</h3>
 
-<EditForm Model="@Model" OnInvalidSubmit="OnInvalidSubmit" OnValidSubmit="OnValidSubmit">
-    <div class="mb-3">
-        <InputText type="text" @bind-Value="Model.Name">
-            <DataAnnotationsValidator></DataAnnotationsValidator>
-            <ValidationSummary></ValidationSummary>
-        </InputText>
+<a href="/create" class="btn btn-sucess">Criar</a>
 
-        <button type="submit">Salvar</button>
-    </div>
-</EditForm>
+<table class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Ações</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (listSkus != null && listSkus.Count() > 0)
+        {
+            foreach (var sku in listSkus)
+            {
+                <tr>
+                    <td>@sku.Nome</td>
+                    <td>
+                        <a href="/update/@sku.Id" class="btn btn-primary">Editar</a>
+                        <button class="btn btn-danger" onclick="Delete(@sku.Id)">Excluir</button>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
 
-<p>
-    @Result
-</p>
 @code {
-    public Teste Model { get; set; } = new();
-    public string Result = "Formulário Vazio";
-
-    public void OnValidSubmit()
+    List<SKUDTO> listSkus = new();
+    protected override async Task OnInitializedAsync()
     {
-        Result = "Formulário preenchido";
+        listSkus = await PopularSkus();
     }
 
-    public void OnInvalidSubmit()
+    private async Task<List<SKUDTO>> PopularSkus()
     {
-        Result = "Formulário Inválido";
+        var lista = await skuApp.SelectAll();
+        return lista.Select(s => new SKUDTO { }).ToList();
+        // return await skuApp.SelectAll().Select(x => new SKUDTO
+        // {
+        //     Id = x.Id,
+        //     Nome = x.Nome
+        // }).ToList();
     }
 
-    public class Teste
+    async Task Delete(int Id)
     {
-        //Data Annotations
-        [Required(ErrorMessage = "Nome obrigatório")]
-        public string Name { get; set; } = string.Empty;
+        bool confirma = await JSRuntime.InvokeAsync<bool>("confirm", "Deseja excluir o sku?");
+        if (!confirma)
+            return;
 
+        var sku = await skuApp.SelectById(Id);
 
+        await skuApp.Delete(sku.Id);
+
+        listSkus = await PopularSkus();
+
+        StateHasChanged();
     }
 }

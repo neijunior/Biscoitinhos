@@ -12,46 +12,47 @@ using System.Threading.Tasks;
 
 namespace Biscoitinhos.application.Servicos
 {
-  public class ServicoAppBase<TEntity, TEntidadeDTO> : IAppBase<TEntity, TEntidadeDTO>
-    where TEntity : EntidadeBase
-    where TEntidadeDTO : BaseDTO
-  {
-    public readonly IServicoBase<TEntity> _servico;
-    public readonly IMapper _iMapper;
+    public class ServicoAppBase<TEntity, TEntidadeDTO> : IAppBase<TEntity, TEntidadeDTO>
+      where TEntity : EntidadeBase
+      where TEntidadeDTO : BaseDTO
+    {
+        public readonly IServicoBase<TEntity> _servico;
+        public readonly IMapper _iMapper;
 
-    public ServicoAppBase(IMapper iMapper, IServicoBase<TEntity> servico): base()
-    {
-      this._iMapper = iMapper;
-      this._servico = servico;
-    }
-    public void Delete(int Id)
-    {
-      _servico.Delete(Id);
-    }
+        public ServicoAppBase(IMapper iMapper, IServicoBase<TEntity> servico) : base()
+        {
+            this._iMapper = iMapper;
+            this._servico = servico;
+        }
+        public async Task Delete(int Id)
+        {
+            await _servico.Delete(Id);
+        }
 
-    public void Delete(TEntity entity)
-    {
-      _servico.Delete(entity);
-    }
+        public async Task Delete(TEntity entity)
+        {
+            await _servico.Delete(entity);
+        }
 
-    public void Insert(TEntity entity)
-    {
-      _servico.Insert(_iMapper.Map<TEntity>(entity));
-    }
+        public async Task Insert(TEntity entity)
+        {
+            await _servico.Insert(_iMapper.Map<TEntity>(entity));
+        }
 
-    public IEnumerable<TEntidadeDTO> SelectAll()
-    {
-      return _iMapper.Map<IEnumerable<TEntidadeDTO>>(_servico.SelectAll());
-    }
+        public async Task<ICollection<TEntidadeDTO>> SelectAll()
+        {
+            var lista = _iMapper.Map<ICollection<TEntidadeDTO>>(_servico.SelectAll());
+            return lista;
+        }
 
-    public TEntidadeDTO SelectById(int Id)
-    {
-      return _iMapper.Map<TEntidadeDTO>(_servico.SelectById(Id));
-    }
+        public async Task<TEntidadeDTO> SelectById(int Id)
+        {
+            return _iMapper.Map<TEntidadeDTO>(_servico.SelectById(Id));
+        }
 
-    public void Update(TEntity entity)
-    {
-      _servico.Update(entity);
+        public async Task Update(TEntity entity)
+        {
+            await _servico.Update(entity);
+        }
     }
-  }
 }

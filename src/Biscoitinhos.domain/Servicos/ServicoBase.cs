@@ -9,41 +9,41 @@ using System.Threading.Tasks;
 
 namespace Biscoitinhos.domain.Servicos
 {
-  public class ServicoBase<TEntity> : IServicoBase<TEntity> where TEntity : EntidadeBase
-  {
-    protected readonly IRepositorioBase<TEntity> _repositorio;
-    public ServicoBase(IRepositorioBase<TEntity> repositorio)
+    public class ServicoBase<TEntity> : IServicoBase<TEntity> where TEntity : EntidadeBase
     {
-      this._repositorio = repositorio;
-    }
-    public void Delete(int Id)
-    {
-      _repositorio.Delete(Id); 
-    }
+        protected readonly IRepositorioBase<TEntity> _repositorio;
+        public ServicoBase(IRepositorioBase<TEntity> repositorio)
+        {
+            this._repositorio = repositorio;
+        }
+        public async Task Delete(int Id)
+        {
+            await _repositorio.Delete(Id);
+        }
 
-    public void Delete(TEntity entity)
-    {
-      _repositorio.Delete(entity);
-    }
+        public async Task Delete(TEntity entity)
+        {
+            await _repositorio.Delete(entity);
+        }
 
-    public void Insert(TEntity entity)
-    {
-      _repositorio.Insert(entity);
-    }
+        public async Task Insert(TEntity entity)
+        {
+            await _repositorio.Insert(entity);
+        }
 
-    public IEnumerable<TEntity> SelectAll()
-    {
-      return _repositorio.SelectAll();
-    }
+        public async Task<ICollection<TEntity>> SelectAll()
+        {
+            return await _repositorio.SelectAll();
+        }
 
-    public TEntity SelectById(int Id)
-    {
-      return _repositorio.SelectById(Id);
-    }
+        public async Task<TEntity> SelectById(int Id)
+        {
+            return await _repositorio.SelectById(Id);
+        }
 
-    public void Update(TEntity entity)
-    {
-      _repositorio.Update(entity);
+        public async Task Update(TEntity entity)
+        {
+            await _repositorio.Update(entity);
+        }
     }
-  }
 }

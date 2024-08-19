@@ -10,57 +10,57 @@ using System.Threading.Tasks;
 
 namespace Biscoitinhos.infra.Data.Repositorios
 {
-  public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase
-  {
-    protected readonly Contexto _contexto;
-
-    public RepositorioBase(Contexto context) : base()
+    public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase
     {
-      this._contexto = context;
-    }
+        protected readonly Contexto _contexto;
 
-    public void Update(TEntity entity)
-    {
-      _contexto.InitTransaction();
-      _contexto.Set<TEntity>().Attach(entity);
-      _contexto.Entry(entity).State = EntityState.Modified;
-      _contexto.SendChanges();
-    }
+        public RepositorioBase(Contexto context) : base()
+        {
+            this._contexto = context;
+        }
 
-    public void Delete(int Id)
-    {
-      var entity = SelectById(Id);
-      if (entity != null)
-      {
-        _contexto.InitTransaction();
-        _contexto.Set<TEntity>().Remove(entity);
-        _contexto.SendChanges();
-      }
-    }
+        public async Task Update(TEntity entity)
+        {
+            _contexto.InitTransaction();
+            _contexto.Set<TEntity>().Attach(entity);
+            _contexto.Entry(entity).State = EntityState.Modified;
+            _contexto.SendChanges();
+        }
 
-    public void Delete(TEntity entity)
-    {
-      _contexto.InitTransaction();
-      _contexto.Set<TEntity>().Remove(entity);
-      _contexto.SendChanges();
-    }
+        public async Task Delete(int Id)
+        {
+            var entity = await SelectById(Id);
+            if (entity != null)
+            {
+                _contexto.InitTransaction();
+                _contexto.Set<TEntity>().Remove(entity);
+                _contexto.SendChanges();
+            }
+        }
 
-    public int Insert(TEntity entity)
-    {
-      _contexto.InitTransaction();
-      var id = _contexto.Set<TEntity>().Add(entity).Entity.Id;
-      _contexto.SendChanges();
-      return id;
-    }
+        public async Task Delete(TEntity entity)
+        {
+            _contexto.InitTransaction();
+            _contexto.Set<TEntity>().Remove(entity);
+            _contexto.SendChanges();
+        }
 
-    public IEnumerable<TEntity> SelectAll()
-    {
-      return _contexto.Set<TEntity>().ToList();
-    }
+        public async Task Insert(TEntity entity)
+        {
+            _contexto.InitTransaction();
+            var id = _contexto.Set<TEntity>().Add(entity).Entity.Id;
+            _contexto.SendChanges();
+            //return id;
+        }
 
-    public TEntity SelectById(int Id)
-    {
-      return _contexto.Set<TEntity>().Find(Id);
+        public async Task<ICollection<TEntity>> SelectAll()
+        {
+            return _contexto.Set<TEntity>().ToList();
+        }
+
+        public async Task<TEntity> SelectById(int Id)
+        {
+            return _contexto.Set<TEntity>().Find(Id);
+        }
     }
-  }
 }
