@@ -3,16 +3,10 @@ using Biscoitinhos.application.DTO;
 using Biscoitinhos.application.Interfaces;
 using Biscoitinhos.domain.Entidades;
 using Biscoitinhos.domain.Interfaces.Servicos;
-using Biscoitinhos.domain.Servicos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Biscoitinhos.application.Servicos
 {
-    public class ServicoAppBase<TEntity, TEntidadeDTO> : IAppBase<TEntity, TEntidadeDTO>
+  public class ServicoAppBase<TEntity, TEntidadeDTO> : IAppBase<TEntity, TEntidadeDTO>
       where TEntity : EntidadeBase
       where TEntidadeDTO : BaseDTO
     {
