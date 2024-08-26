@@ -8,8 +8,7 @@ namespace Biscoitinhos.application
   {
     public MappingEntidade()
     {
-      CreateMap<SKU, SKUDTO>();
-      CreateMap<SKUDTO, SKU>();
+      CreateMap<SKU, SKUDTO>().ReverseMap();
     }
   }
 }

@@ -7,7 +7,7 @@ namespace Biscoitinhos.infra.Data.Contextos
 {
   public class Contexto : DbContext
   {
-    public DbSet<SKU> SKUs { get; set; } 
+    public DbSet<SKU> SKUs { get; set; }
     public IDbContextTransaction Transaction { get; private set; }
     public Contexto(DbContextOptions<Contexto> options) : base(options)
     {
@@ -17,7 +17,7 @@ namespace Biscoitinhos.infra.Data.Contextos
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      
+
     }
 
     public IDbContextTransaction InitTransaction()
@@ -28,7 +28,7 @@ namespace Biscoitinhos.infra.Data.Contextos
 
     private void RollBack()
     {
-      if (Transaction != null) Transaction.Rollback();  
+      if (Transaction != null) Transaction.Rollback();
     }
 
     private void Save()
@@ -65,7 +65,7 @@ namespace Biscoitinhos.infra.Data.Contextos
     {
       base.OnModelCreating(modelBuilder);
       modelBuilder.ApplyConfiguration(new SKUMap());
-      
+
     }
   }
 }

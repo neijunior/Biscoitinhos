@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Biscoitinhos.application\Biscoitinhos.application.csproj" />
+    <ProjectReference Include="..\..\Biscoitinhos.infra.Core\Biscoitinhos.infra.Core.csproj" />
     <ProjectReference Include="..\Biscoitinhos.infra.Data\Biscoitinhos.infra.Data.csproj" />
   </ItemGroup>
 

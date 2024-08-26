@@ -8,8 +8,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Biscoitinhos.application\Biscoitinhos.application.csproj" />
+    <ProjectReference Include="..\..\Biscoitinhos.infra\Biscoitinhos.infra.IoC\Biscoitinhos.infra.IoC.csproj" />
     <ProjectReference Include="..\Biscoitinhos.presentation.Client\Biscoitinhos.presentation.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

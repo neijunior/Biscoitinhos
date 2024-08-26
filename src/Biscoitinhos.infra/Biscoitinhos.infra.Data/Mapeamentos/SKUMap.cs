@@ -9,9 +9,9 @@ namespace Biscoitinhos.infra.Data.Mapeamentos
     public override void Configure(EntityTypeBuilder<SKU> builder)
     {
       base.Configure(builder);
-      builder.ToTable("sku");
-      builder.Property(c => c.Nome).IsRequired().HasColumnName("Nome").HasMaxLength(100);
-      builder.Property(c => c.UnidadeMedida).IsRequired().HasColumnName("UnidadeMedida");
+      builder.ToTable("SKU", "dbo");
+      builder.Property(c => c.Nome).IsRequired().HasColumnName("Nome").HasMaxLength(100).HasColumnType("varchar");
+      builder.Property(c => c.UnidadeMedida).IsRequired().HasColumnName("UnidadeMedida").HasMaxLength(100).HasColumnType("varchar");
     }
   }
 }

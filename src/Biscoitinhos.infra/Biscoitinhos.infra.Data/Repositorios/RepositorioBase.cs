@@ -2,15 +2,10 @@
 using Biscoitinhos.domain.Interfaces.Repositorios;
 using Biscoitinhos.infra.Data.Contextos;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Biscoitinhos.infra.Data.Repositorios
 {
-    public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase
+  public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase
     {
         protected readonly Contexto _contexto;
 

@@ -41,13 +41,13 @@ namespace Biscoitinhos.application.Servicos
 
         public async Task<ICollection<TEntidadeDTO>> SelectAll()
         {
-            var lista = _iMapper.Map<ICollection<TEntidadeDTO>>(_servico.SelectAll());
+            var lista = _iMapper.Map<ICollection<TEntidadeDTO>>(await _servico.SelectAll());
             return lista;
         }
 
         public async Task<TEntidadeDTO> SelectById(int Id)
         {
-            return _iMapper.Map<TEntidadeDTO>(_servico.SelectById(Id));
+            return _iMapper.Map<TEntidadeDTO>(await _servico.SelectById(Id));
         }
 
         public async Task Update(TEntity entity)

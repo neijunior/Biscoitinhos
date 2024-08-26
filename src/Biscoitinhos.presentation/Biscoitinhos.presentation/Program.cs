@@ -1,5 +1,6 @@
 using Biscoitinhos.presentation.Client.Pages;
 using Biscoitinhos.presentation.Components;
+using Biscoitinhos.infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.Register(builder.Configuration);
 
 var app = builder.Build();
 
