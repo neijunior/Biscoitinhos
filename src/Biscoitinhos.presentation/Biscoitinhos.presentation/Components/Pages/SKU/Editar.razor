@@ -1,40 +1,55 @@
-﻿@page "/Sku/Editar"
+﻿@page "/Sku/Editar/{id:int?}"
 
 @using Biscoitinhos.application.DTO
 @inject NavigationManager navManager;
 @inject Biscoitinhos.application.Interfaces.ISKUApp skuApp;
 
 <h1>Criar SKU</h1>
-<form>
-    <EditForm Model="skuDTO" OnValidSubmit="CreateSku">
-        <div class="form-group mb-3">
-            <label for="skuName">Nome</label>
-            <InputText @bind-Value="skuDTO.Nome" class="form-control" id="skuName"></InputText>
-        </div>
 
-        <div class="form-group mb-3">
-            <label for="skuUnidadeMedida">Unidade Medida</label>
-            <InputText @bind-Value="skuDTO.UnidadeMedida" class="form-control" id="UnidadeMedida"></InputText>
-        </div>
+<EditForm Model="skuDTO" OnValidSubmit="EditarSku" FormName="frmSku">
+    <div class="form-group mb-3">
+        <label for="skuNome">Nome</label>
+        <InputText @bind-Value="skuDTO.Nome" class="form-control" id="skuNome"></InputText>
+    </div>
 
-        @* <DataAnnotationsValidator />
-        <ValidationSummary /> *@
+    <div class="form-group mb-3">
+        <label for="skuUnidadeMedida">Unidade Medida</label>
+        <InputText @bind-Value="skuDTO.UnidadeMedida" class="form-control" id="skuUnidadeMedida"></InputText>
+    </div>
+@* 
+    <DataAnnotationsValidator />
+    <ValidationSummary /> *@
 
-        <button class="btn btn-success" type="submit">Salvar</button>
-    </EditForm>
-</form>
+    <button type="submit" class="btn btn-success" >Salvar</button>
+</EditForm>
+
 
 @code {
+    
     SKUDTO skuDTO = new();
-    async Task CreateSku()
+
+    [Parameter]
+    public int? id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        skuDTO = id.HasValue && id.Value != 0 ? await skuApp.SelectById(id.Value) : new();        
+    }
+
+    public async Task EditarSku()
     {
         Biscoitinhos.domain.Entidades.SKU sku = new()
             {
+                Id = skuDTO.Id,
                 Nome = skuDTO.Nome,
                 UnidadeMedida = skuDTO.UnidadeMedida
             };
 
-        await skuApp.Insert(sku);
+        if (sku.Id == 0)
+            await skuApp.Insert(sku);
+        else
+            await skuApp.Update(sku);
+
         navManager.NavigateTo("/Sku/Index");
     }
 }
