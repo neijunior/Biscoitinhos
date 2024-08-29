@@ -4,11 +4,12 @@ using Biscoitinhos.domain.Entidades;
 
 namespace Biscoitinhos.application
 {
-  public class MappingEntidade : Profile
-  {
-    public MappingEntidade()
+    public class MappingEntidade : Profile
     {
-      CreateMap<SKU, SKUDTO>().ReverseMap();
+        public MappingEntidade()
+        {
+            CreateMap<SKU, SKUDTO>().ReverseMap();
+            CreateMap<UnidadeMedida, UnidadeMedidaDTO>().ReverseMap();
+        }
     }
-  }
 }

@@ -11,7 +11,7 @@ namespace Biscoitinhos.infra.Data.Mapeamentos
       base.Configure(builder);
       builder.ToTable("SKU", "dbo");
       builder.Property(c => c.Nome).IsRequired().HasColumnName("Nome").HasMaxLength(100).HasColumnType("varchar");
-      builder.Property(c => c.UnidadeMedida).IsRequired().HasColumnName("UnidadeMedida").HasMaxLength(100).HasColumnType("varchar");
+      builder.Property(c => c.UnidadeMedida).IsRequired().HasColumnName("UnidadeMedida").HasMaxLength(5).HasColumnType("varchar");
     }
   }
 }

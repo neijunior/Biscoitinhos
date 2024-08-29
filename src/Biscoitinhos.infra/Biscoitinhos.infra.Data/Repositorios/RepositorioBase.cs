@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Biscoitinhos.infra.Data.Repositorios
 {
-  public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase
+    public class RepositorioBase<TEntity> : IRepositorioBase<TEntity> where TEntity : EntidadeBase
     {
         protected readonly Contexto _contexto;
 
@@ -16,10 +16,17 @@ namespace Biscoitinhos.infra.Data.Repositorios
 
         public async Task Update(TEntity entity)
         {
-            _contexto.InitTransaction();
-            _contexto.Set<TEntity>().Attach(entity);
-            _contexto.Entry(entity).State = EntityState.Modified;
-            _contexto.SendChanges();
+            try
+            {
+                _contexto.InitTransaction();
+                _contexto.Set<TEntity>().Attach(entity);
+                _contexto.Entry(entity).State = EntityState.Modified;
+                _contexto.SendChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public async Task Delete(int Id)

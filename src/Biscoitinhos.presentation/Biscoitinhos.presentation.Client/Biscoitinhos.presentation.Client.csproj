@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Biscoitinhos.application\Biscoitinhos.application.csproj" />
+    <ProjectReference Include="..\..\Biscoitinhos.infra\Biscoitinhos.infra.IoC\Biscoitinhos.infra.IoC.csproj" />
+  </ItemGroup>
+
 </Project>

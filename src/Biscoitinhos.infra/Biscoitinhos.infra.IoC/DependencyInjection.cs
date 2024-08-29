@@ -15,20 +15,16 @@ namespace Biscoitinhos.infra.IoC
   public static class DependencyInjection
   {
     public static void Register(this IServiceCollection svcCollection, IConfiguration configuration)
-    {      
+    {
       svcCollection.AddAutoMapper(typeof(MappingEntidade).Assembly);
 
       //Aplicação
-      svcCollection.AddScoped(typeof(IAppBase<,>), typeof(ServicoAppBase<,>));
-      svcCollection.AddScoped<ISKUApp, SKUApp>();
-
+      svcCollection.RegisterAplicacao();
       //Domínio
-      svcCollection.AddScoped(typeof(IServicoBase<>), typeof(ServicoBase<>)); 
-      svcCollection.AddScoped<ISKUServico, SKUServico>();
-
+      svcCollection.RegisterDominio();
       //Repositorio
-      svcCollection.AddScoped(typeof(IRepositorioBase<>), typeof(RepositorioBase<>));
-      svcCollection.AddScoped<ISKURepositorio, SKURepositorio>();
+      svcCollection.RegisterRepositorio();
+
 
       svcCollection.AddSqlConfiguration(configuration);
     }
@@ -38,6 +34,7 @@ namespace Biscoitinhos.infra.IoC
       svcCollection.AddDbContext<Contexto>(opt => opt.UseSqlServer(configuration.GetConnectionString("ConnAtivo"), b =>
       {
         b.MigrationsAssembly("Biscoitinhos.infra.Data");
+        opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
       }));
     }
   }

@@ -3,6 +3,7 @@ using Biscoitinhos.infra.Data.Contextos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Biscoitinhos.infra.Data.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20240829202948_AdicionarTabelaUnidadeMedida")]
+    partial class AdicionarTabelaUnidadeMedida
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,58 +54,21 @@ namespace Biscoitinhos.infra.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Codigo")
                         .IsRequired()
-                        .HasMaxLength(5)
-                        .HasColumnType("varchar")
-                        .HasColumnName("Codigo");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar")
-                        .HasColumnName("Descricao");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("UnidadeMedida", "dbo");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Codigo = "KG",
-                            Descricao = "Quilograma"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Codigo = "G",
-                            Descricao = "Grama"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Codigo = "UN",
-                            Descricao = "Unidade"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Codigo = "L",
-                            Descricao = "Litro"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Codigo = "ML",
-                            Descricao = "Mililitro"
-                        });
+                    b.ToTable("UnidadeMedidas");
                 });
 #pragma warning restore 612, 618
         }

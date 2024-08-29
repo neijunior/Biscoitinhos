@@ -3,7 +3,7 @@
 @using Biscoitinhos.application.DTO;
 @inject IJSRuntime JSRuntime;
 @inject Biscoitinhos.application.Interfaces.ISKUApp skuApp;
-
+@rendermode InteractiveServer
 
 <h3>sku</h3>
 
@@ -12,10 +12,9 @@
 <table class="table table-responsive table-striped">
     <thead>
         <tr>
-            <th>Id</th>
             <th>Nome</th>
-            <th>Ações</th>
-            <th></th>
+            <th>Unidade de Medida</th>
+            <th>Ações</th>            
         </tr>
     </thead>
     <tbody>
@@ -25,8 +24,9 @@
             {
                 <tr>
                     <td>@sku.Nome</td>
+                    <td>@sku.UnidadeMedida</td>
                     <td>
-                        <a href="/update/@sku.Id" class="btn btn-primary">Editar</a>
+                        <a href="/Sku/Editar/@sku.Id" class="btn btn-primary">Editar</a>
                         <button class="btn btn-danger" onclick="Delete(@sku.Id)">Excluir</button>
                     </td>
                 </tr>
@@ -45,12 +45,12 @@
     private async Task<List<SKUDTO>> PopularSkus()
     {
         var lista = await skuApp.SelectAll();
-        return lista.Select(s => new SKUDTO { }).ToList();
-        // return await skuApp.SelectAll().Select(x => new SKUDTO
-        // {
-        //     Id = x.Id,
-        //     Nome = x.Nome
-        // }).ToList();
+        return lista.Select(x => new SKUDTO
+            {
+                Id = x.Id,
+                Nome = x.Nome,
+                UnidadeMedida = x.UnidadeMedida
+            }).ToList();
     }
 
     async Task Delete(int Id)

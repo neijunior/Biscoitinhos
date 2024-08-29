@@ -7,7 +7,8 @@ namespace Biscoitinhos.infra.Data.Contextos
 {
   public class Contexto : DbContext
   {
-    public DbSet<SKU> SKUs { get; set; }
+    public DbSet<SKU> SKU { get; set; }
+    public DbSet<UnidadeMedida> UnidadeMedida { get; set; }
     public IDbContextTransaction Transaction { get; private set; }
     public Contexto(DbContextOptions<Contexto> options) : base(options)
     {
@@ -65,7 +66,8 @@ namespace Biscoitinhos.infra.Data.Contextos
     {
       base.OnModelCreating(modelBuilder);
       modelBuilder.ApplyConfiguration(new SKUMap());
-
+      modelBuilder.ApplyConfiguration(new UnidadeMedidaMap());
+      modelBuilder.PopularTabela();
     }
   }
 }

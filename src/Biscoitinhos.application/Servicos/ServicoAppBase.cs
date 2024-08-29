@@ -46,7 +46,7 @@ namespace Biscoitinhos.application.Servicos
 
         public async Task Update(TEntity entity)
         {
-            await _servico.Update(entity);
+            await _servico.Update(_iMapper.Map<TEntity>(entity));
         }
     }
 }
