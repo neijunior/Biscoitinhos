@@ -1,8 +1,13 @@
 ﻿namespace Biscoitinhos.domain.Entidades
 {
-    public class UnidadeMedida : EntidadeBase
+  public class UnidadeMedida
+  {
+    public UnidadeMedida()
     {
-        public string Codigo { get; set; }
-        public string Descricao { get; set; }
+      Codigo = string.Empty;
+      Descricao = string.Empty;
     }
+    public string Codigo { get; set; }
+    public string Descricao { get; set; }
+  }
 }

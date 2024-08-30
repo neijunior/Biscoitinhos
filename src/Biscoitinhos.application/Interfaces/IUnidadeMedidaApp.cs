@@ -3,7 +3,8 @@ using Biscoitinhos.domain.Entidades;
 
 namespace Biscoitinhos.application.Interfaces
 {
-  public interface IUnidadeMedidaApp: IAppBase<UnidadeMedida, UnidadeMedidaDTO>
+  public interface IUnidadeMedidaApp
   {
+    Task<ICollection<UnidadeMedidaDTO>> SelectAll();
   }
 }
